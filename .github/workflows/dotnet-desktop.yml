@@ -53,4 +53,4 @@ jobs:
       if: ${{ (github.event.inputs.artifact_release == 'true' && matrix.configuration == 'Release') || (github.event.inputs.artifact_debug == 'true' && matrix.configuration == 'Debug') }}
       with:
         name: WebFrame-${{ matrix.configuration }}
-        path: bin\Release\net5.0-windows\win-x64\publish
+        path: bin\${{ matrix.configuration }}\net6.0-windows\win-x64\publish
