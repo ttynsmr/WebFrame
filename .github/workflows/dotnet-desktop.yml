@@ -49,7 +49,7 @@ jobs:
     - name: Build
       run: dotnet publish --runtime win-x64 --configuration ${{ matrix.configuration }} --self-contained false
 
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       if: ${{ (github.event.inputs.artifact_release == 'true' && matrix.configuration == 'Release') || (github.event.inputs.artifact_debug == 'true' && matrix.configuration == 'Debug') }}
       with:
         name: WebFrame-${{ matrix.configuration }}
